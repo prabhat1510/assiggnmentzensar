@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<meta charset="ISO-8859-1">
+		<title>List of all companies</title>
+		<style>
+			table, th, td {
+			  border: 1px solid black;
+			  border-collapse: collapse;
+			}
+		</style>
+	</head>
+<body>
+<table style="width:100%">
+		  <tr>
+		    <th>Student Id</th>
+		    <th>Student Name</th> 
+		    <th>College Id</th>
+		    <th>College Name</th>
+		    <th>College Address</th>
+		  </tr>
+		  <tr th:each="stud: ${allStudents}">
+		    <td th:text="${stud.studentId}"></td>
+		    <td th:text="${stud.studentName}"></td>
+		    <td th:text="${stud.college.collegeId}"></td>
+		    <td th:text="${stud.college.collegeName}"></td>
+		    <td th:text="${stud.college.address}"></td>
+		  </tr >
+		</table>
+	</body>
+</html>
+
+</body>
+</html>
