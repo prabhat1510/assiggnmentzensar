@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>List of all students</title>
+</head>
+<body>
+<div th:each="stud: ${allStudents}">
+		<span th:text="${stud.studentId}"/> --<span th:text="${stud.studentName}"/>
+	</div>
+</body>
+</html>
