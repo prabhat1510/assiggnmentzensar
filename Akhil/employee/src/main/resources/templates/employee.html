@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>List of all companies</title>
+		<style>
+			table, th, td {
+			  border: 1px solid black;
+			  border-collapse: collapse;
+			}
+		</style>
+	</head>
+	<body>
+		<table style="width:100%">
+		  <tr>
+		    <th>Employee Id</th>
+		    <th>Employee Name</th> 
+		    <th>Employee Salary</th>
+		    <th>Employee Domain</th>
+		  </tr>
+		  <tr th:each="emp: ${allEmployees}">
+		    <td th:text="${emp.empId}"></td>
+		    <td th:text="${emp.empName}"></td>
+		    <td th:text="${emp.empSalary}"></td>
+		    <td th:text="${emp.empDomain}"></td>
+		  </tr >
+		</table>
+	</body>
+</html>
