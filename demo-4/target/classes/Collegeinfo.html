@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>List of all companies</title>
+		<style>
+			table, th, td {
+			  border: 1px solid black;
+			  border-collapse: collapse;
+			}
+		</style>
+	</head>
+	<body>
+		<table style="width:100%">
+		  <tr>
+		    <th>College collegeid</th>
+		    <th>College collegename</th> 
+		    <th>College address</th>
+		  </tr>
+		  <tr th:each="col: ${allColleges}">
+		    <td th:text="${col.colid}"></td>
+		    <td th:text="${col.colname}"></td>
+		    <td th:text="${col.coladdress}"></td>
+		  </tr >
+		</table>
+	</body>
+</html>
