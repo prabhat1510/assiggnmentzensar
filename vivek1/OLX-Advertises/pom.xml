@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.training</groupId>
-	<artifactId>OLX-Adevrtises</artifactId>
+	<artifactId>OLX-Advertises</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>OLX-Adevrtises</name>
+	<name>OLX-Advertises</name>
 	<description>Olx Advertises Description</description>
 	<properties>
 		<java.version>17</java.version>
