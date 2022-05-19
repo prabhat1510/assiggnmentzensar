@@ -1,0 +1,17 @@
+package com.example.demo;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import com.example.demo.*;
+
+@RestControllerAdvice
+public class NoDataFoundExceptionHandlerr {
+	
+	@ExceptionHandler(NoDataFoundException.class)
+	public ResponseEntity<Object> handleNoDataFoundException() {
+		return new ResponseEntity<>("No data found", HttpStatus.NOT_FOUND);
+	}
+
+}
