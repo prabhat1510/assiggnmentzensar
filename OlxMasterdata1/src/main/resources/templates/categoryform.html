@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Category Form</title>
+</head>
+<body>
+<!-- we use *  to POST data and  $ to GET data i.e. *{varName} & i${varName}  -->
+	<form action="#" th:action="@{/savecategory}" th:object="${category}" method="post">
+		<p>Category Name : <input type="text" th:field="*{name}"/></p>
+s		<p><input type="submit" value="Submit"/></p>
+	</form>
+	
+	<form action="#" th:action="@{/deletecategory}" th:object="${category}" method="delete">
+		<p>Category Id: <input type="text" th:field="*{categoryId}"/></p>
+		<p>Company Name : <input type="text" th:field="*{name}"/></p>
+		<p><input type="submit" value="Delete"/></p>
+	</form>
+</body>
+</html>
