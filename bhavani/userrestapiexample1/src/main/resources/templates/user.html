@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table style="width:100%">
+		  <tr>
+		    <th>User Id</th>
+		    <th>User Name</th> 
+		    <th>User Dept</th>
+		   
+		  </tr>
+		  <tr th:each="user: ${allUsers}">
+		    <td th:text="${user.userId}"></td>
+		    <td th:text="${user.Name}"></td>
+		    <td th:text="${user.Dept}"></td>
+		    
+		  </tr >
+</body>
+</html>
