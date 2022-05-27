@@ -1,0 +1,72 @@
+server:
+  port: 8060
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8061/eureka/
+
+logging:
+  pattern: 
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+              
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      - id: helloworld-service
+        uri: lb://helloworld-service
+        predicates:
+        - Path=/helloworld/**
+        filters:
+        - RewritePath=/helloworld/(?<path>.*), /$\{path}
+      - id: olxadvertises-service
+        uri: lb://olxadvertises-service
+        predicates:
+        - Path=/advertises/**
+        filters:
+        - RewritePath=/advertises/(?<path>.*), /$\{path}
+      - id: olxlogin-service
+        uri: lb://olxlogin-service
+        predicates:
+        - Path=/login/**
+        filters:
+        - RewritePath=/login/(?<path>.*), /$\{path}
+      - id: customer-service
+        uri: lb://customer-service
+        predicates:
+        - Path=/customer/**
+        filters:
+        - RewritePath=/customer/(?<path>.*), /$\{path}
+      - id: product-service
+        uri: lb://product-service
+        predicates:
+        - Path=/product/**
+        filters:
+        - RewritePath=/product/(?<path>.*), /$\{path}
+      - id: order-service
+        uri: lb://order-service
+        predicates:
+        - Path=/order/**
+        filters:
+        - RewritePath=/order/(?<path>.*), /$\{path}
+springdoc:
+  swagger-ui:
+    urls:
+      - name: helloworld
+        url: /v3/api-docs/helloworld
+      - name: advertises
+        url: /v3/api-docs/advertises
+      - name: login
+        url: /v3/api-docs/login
+      - name: customer
+        url: /v3/api-docs/customer
+      - name: product
+        url: /v3/api-docs/product
+      - name: orders
+        url: /v3/api-docs/orders

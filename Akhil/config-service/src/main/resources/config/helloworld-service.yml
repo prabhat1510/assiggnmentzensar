@@ -1,0 +1,16 @@
+server:
+  port: 0
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8061/eureka/
+      
+logging:
+  pattern: 
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+
+springdoc:
+  packagesToScan: com.helloworld.demo
