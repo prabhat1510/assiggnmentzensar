@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>List of all Users</title>
+	<style>
+		table,
+		th,
+		td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+	</style>
+</head>
+
+<body>
+	<table style="width:100%">
+		<tr>
+			<th>User Id</th>
+			<th>User Name</th>
+			<th>User Address</th>
+		</tr>
+		<tr th:each="stud: ${allUser}">
+			<td th:text="${usr.userId}"></td>
+			<td th:text="${usr.userName}"></td>
+			<td th:text="${usr.user.userId}"></td>
+			<td th:text="${usr.user.userName}"></td>
+			<td th:text="${usr.user.address}"></td>
+		</tr>
+	</table>
+</body>
+
+</html>
